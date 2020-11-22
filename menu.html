@@ -6,6 +6,7 @@
     <title>Menu</title>
 </head>
 <body>
+
     <div class="layout">
         <div class="verticalDisplay">
             <div class="pizzaNav">
@@ -17,22 +18,26 @@
             <div class="pizzaOptions">
                 
                 <h1>Pizza Sizes</h1>
-                <input type="radio" id="XL" name="XL" value="Extra Large">
+                <input class= "check" type="radio" id="XL" name="XL" value="Extra Large" onclick="size1()">
                     <label for="XL">Extra Large</label><br>
+                    <p id="text1" style="display: none"> $20</p>
                     
-                <input type="radio" id="Large" name="Large" value="Large">
+                <input class= "check" type="radio" id="Large" name="Large" value="Large" onclick="size2()">
                     <label for="Large">Large</label><br>
+                    <p id="text2" style="display: none"> $15</p>
 
-                <input type="radio" id="Medium" name="Medium" value="Medium">
+                <input class= "check" type="radio" id="Medium" name="Medium" value="Medium" onclick="size3()">
                     <label for="Medium">Medium</label><br>
+                    <p id="text3" style="display: none"> $10</p>
                     
-                <input type="radio" id="Small" name="Small" value="Small">
-                    <label for="Small">Small</label><br>    
+                <input class= "check" type="radio" id="Small" name="Small" value="Small" onclick="size4()">
+                    <label for="Small">Small</label><br>
+                    <p id="text4" style="display: none"> $6</p>    
 
                 <h1>Pizza Toppings</h1>
 
                 <!--Pepperoni-->    
-                <input type="checkbox" id="pepperoniOption" name="pepperoniOption" value="Pepperoni">
+                <input class= "check" type="checkbox" id="pepperoniOption" name="pepperoniOption" value="Pepperoni">
                     <label for="pepperoniOption">Pepperoni</label><br>
                 <!--radio pepperoni options-->
                 <input type="radio" id="extraPep" name="extraPep" value="Extra Pepperoni">
@@ -41,7 +46,7 @@
                     <label for="halfPep">Half Pepperoni</label><br>
 
                 <!--Sausage-->
-                <input type="checkbox" id="sausageOption" name="sausageOption" value="Sausage">
+                <input class= "check" type="checkbox" id="sausageOption" name="sausageOption" value="Sausage">
                     <label for="sausageOption">Sausage</label><br>
                 <!--radio sausage options-->
                 <input type="radio" id="extraSaus" name="extraPep" value="Extra Sausage">
@@ -50,7 +55,7 @@
                     <label for="halfSaus">Half Sausage</label><br>
 
                 <!--Ham-->
-                <input type="checkbox" id="hamOption" name="hamOption" value="Ham">
+                <input class= "check" type="checkbox" id="hamOption" name="hamOption" value="Ham">
                     <label for="hamOption">Ham</label><br>
                 <!--radio ham options-->
                 <input type="radio" id="extraHam" name="extraHam" value="Extra Ham">
@@ -59,7 +64,7 @@
                     <label for="halfHam">Half Sausage</label><br>
 
                 <!--Beef--> 
-                <input type="checkbox" id="beefOption" name="beefOption" value="Beef">
+                <input class= "check" type="checkbox" id="beefOption" name="beefOption" value="Beef">
                     <label for="beefOption">Beef</label><br>
                 <!--radio beef options-->
                 <input type="radio" id="extraBeef" name="extraBeef" value="Extra Beef">
@@ -69,7 +74,7 @@
 
 
                 <!--Pineapple-->     
-                <input type="checkbox" id="pineappleOption" name="pineappleOption" value="Pineapple">
+                <input class= "check" type="checkbox" id="pineappleOption" name="pineappleOption" value="Pineapple">
                     <label for="pineappleOption">Pineapple</label><br> 
                 <!--radio pineapple options-->
                 <input type="radio" id="extraPine" name="extraPine" value="Extra Pineapple">
@@ -79,7 +84,7 @@
 
 
                 <!--Bacon-->     
-                <input type="checkbox" id="baconOption" name="baconOption" value="Bacon">
+                <input class= "check" type="checkbox" id="baconOption" name="baconOption" value="Bacon">
                     <label for="baconOption">Bacon</label><br>
                 <!--radio bacon options-->
                 <input type="radio" id="extraBacon" name="extraBacon" value="Extra Bacon">
@@ -89,7 +94,7 @@
 
 
                 <!--Onions-->     
-                <input type="checkbox" id="onionsOption" name="onionsOption" value="Onions">
+                <input class= "check" type="checkbox" id="onionsOption" name="onionsOption" value="Onions">
                     <label for="onionsOption">Onions</label><br>    
                 <!--radio onion options-->
                 <input type="radio" id="extraOnion" name="extraOnion" value="Extra Onion">
@@ -99,7 +104,7 @@
 
 
                 <!--Olives-->     
-                <input type="checkbox" id="olivesOption" name="olivesOption" value="Olives">
+                <input class= "check" type="checkbox" id="olivesOption" name="olivesOption" value="Olives">
                     <label for="olivesOption">Olives</label><br>
                 <!--radio olives options-->
                 <input type="radio" id="extraOlvies" name="extraOlvies" value="Extra Olives">
@@ -109,7 +114,7 @@
 
 
                 <!--Mushrooms-->     
-                <input type="checkbox" id="mushroomsOption" name="mushroomsOption" value="Mushrooms">
+                <input class= "check" type="checkbox" id="mushroomsOption" name="mushroomsOption" value="Mushrooms">
                     <label for="mushroomsOption">Mushrooms</label><br>
                 <!--radio mushrooms options-->
                 <input type="radio" id="extraMsuh" name="extraMush" value="Extra Mushrooms">
@@ -119,29 +124,45 @@
 
 
                 <!--Banana Peppers--> 
-                <input type="checkbox" id="bananaPeppersOption" name="bananaPeppersOption" value="Banana Peppers">
+                <input class= "check" type="checkbox" id="bananaPeppersOption" name="bananaPeppersOption" value="Banana Peppers">
                     <label for="bananaPeppersOption">Banana Peppers</label><br>
                 <!--radio banana peppers options-->
                 <input type="radio" id="extraBP" name="extraBP" value="Extra Banana Peppers">
                     <label for="extraBP">Extra Banana Peppers </label><br>
                 <input type="radio" id="halfBP" name="halfBP" value="Half Banana Peppers">
-                    <label for="halfBP">Half Banana Peppers</label><br>
-
-
+                    <label for="halfBP">Half Banana Peppers</label><br>                
 
                 <h1>Premade Pizza Options</h1>    
-                <input type="checkbox" id="Pepperoni" name="Pepperoni" value="Pepperoni Pizza">
+                <input class= "check" type="checkbox" id="Pepperoni" name="Pepperoni" value="Pepperoni Pizza">
                     <label for="Pepperoni">Pepperoni Pizza</label><br>    
-                <input type="checkbox" id="Meat Lovers" name="Meat Lovers" value="Meat Lovers Pizza">
+                <input class= "check" type="checkbox" id="Meat Lovers" name="Meat Lovers" value="Meat Lovers Pizza">
                     <label for="Meat Lovers">Meat Lovers</label><br>
-                <input type="checkbox" id="Cheese" name="Cheese" value="Cheese Pizza">
+                <input class= "check" type="checkbox" id="Cheese" name="Cheese" value="Cheese Pizza">
                     <label for="Cheese">Cheese Pizza</label><br>    
-                <input type="checkbox" id="Hawaiian" name="Hawaiian" value="Hawaiian Pizza">
+                <input class= "check" type="checkbox" id="Hawaiian" name="Hawaiian" value="Hawaiian Pizza">
                     <label for="Hawaiian">Hawaiian Pizza</label><br>
-                <input type="checkbox" id="DeepDish" name="DeepDish" value="Chicago Deep Dish Pizza">
+                <input class= "check" type="checkbox" id="DeepDish" name="DeepDish" value="Chicago Deep Dish Pizza">
                     <label for="DeepDish">Chicago Deep Dish</label><br>                   
             </div>
+            <button href="#" onclick="getValue() ; return false;">Add to Order</button>
+
+            <script>
+                function getValue(){
+                    var checks = document.getElementsByClassName;
+                    var str = "";
+
+                    for( i = 0; i < 19; i++) {
+                        if (checks[i] === true) {
+                            str += checks[i].value + " ";
+                        }
+                        return console.log(str + "Thanks For Your Order");
+                    }
+                }
+            </script>
         </div>
     </div>
+    
+    <script src="controller.js"></script>
+
 </body>
 </html>
