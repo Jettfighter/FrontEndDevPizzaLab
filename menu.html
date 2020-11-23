@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <div class="layout">
+    <div id="EntireWidget" class="layout">
         <div class="verticalDisplay">
             <div class="pizzaNav">
 
@@ -19,7 +19,13 @@
 
                 </div>
                 <div class="AddToOrderWidget">
-                    <button>ADD TO ORDER</button>
+
+                    <div class="pricearea">
+                        <div >Total:</div>
+                        <div id="price" >$0.00</div>
+                    </div>
+
+                    <button class="orderbutton">ADD TO ORDER</button>
                 </div>
             </div>
 
@@ -156,7 +162,7 @@
                     <input class= "check" type="checkbox" id="Hawaiian" name="Hawaiian" value="Hawaiian Pizza">
                         <label for="Hawaiian">Hawaiian Pizza</label><br>
                     <input class= "check" type="checkbox" id="DeepDish" name="DeepDish" value="Chicago Deep Dish Pizza">
-                        <label for="DeepDish">Chicago Deep Dish</label><br>                   
+                        <label for="DeepDish">Chicago Deep Dish</label><br>
                     </div>
                 </div>
             <button href="#" onclick="getValue() ; return false;">Add to Order</button>
