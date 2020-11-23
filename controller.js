@@ -1,13 +1,14 @@
 var entrypoint = document.getElementById('pizza');
 
+
 entrypoint.innerHTML = "<p>This is a piece of text</p>";
 
 window.addEventListener("load", function () {
 
     entrypoint.innerHTML =
-        `
+`
 
-<div class="layout">
+<div id="EntireWidget" class="layout">
 <div class="verticalDisplay">
     <div class="pizzaNav">
 
@@ -52,36 +53,37 @@ window.addEventListener("load", function () {
         <input class= "check" type="checkbox" id="pepperoniOption" name="pepperoniOption" value="Pepperoni" onclick="ToppingsChanged()">
             <label for="pepperoniOption">Pepperoni</label><br>
         <!--radio pepperoni options-->
-        <input type="radio" id="extraPep" name="extraPep" value="Extra Pepperoni">
+        <input type="radio" id="extraPep" name="Pepperoni" value="Extra Pepperoni">
             <label for="extraPep">Extra Pepperoni</label><br>
-        <input type="radio" id="halfPep" name="halfPep" value="Half Pepperoni">
+        <input type="radio" id="halfPep" name="Pepperoni" value="Half Pepperoni">
             <label for="halfPep">Half Pepperoni</label><br>
+  
 
         <!--Sausage-->
         <input class= "check" type="checkbox" id="sausageOption" name="sausageOption" value="Sausage" onclick="ToppingsChanged()">
             <label for="sausageOption">Sausage</label><br>
         <!--radio sausage options-->
-        <input type="radio" id="extraSaus" name="extraSaus" value="Extra Sausage">
+        <input type="radio" id="extraSaus" name="Sausage" value="Extra Sausage">
             <label for="extraSaus">Extra Sausage</label><br>
-        <input type="radio" id="halfSaus" name="halfSaus" value="Half Sausage">
+        <input type="radio" id="halfSaus" name="Sausage" value="Half Sausage">
             <label for="halfSaus">Half Sausage</label><br>
 
         <!--Ham-->
         <input class= "check" type="checkbox" id="hamOption" name="hamOption" value="Ham" onclick="ToppingsChanged()">
             <label for="hamOption">Ham</label><br>
         <!--radio ham options-->
-        <input type="radio" id="extraHam" name="extraHam" value="Extra Ham">
+        <input type="radio" id="extraHam" name="Ham" value="Extra Ham">
             <label for="extraHam">Extra Sausage</label><br>
-        <input type="radio" id="halfHam" name="halfHam" value="Half Ham">
+        <input type="radio" id="halfHam" name="Ham" value="Half Ham">
             <label for="halfHam">Half Sausage</label><br>
 
         <!--Beef--> 
         <input class= "check" type="checkbox" id="beefOption" name="beefOption" value="Beef" onclick="ToppingsChanged()">
             <label for="beefOption">Beef</label><br>
         <!--radio beef options-->
-        <input type="radio" id="extraBeef" name="extraBeef" value="Extra Beef">
+        <input type="radio" id="extraBeef" name="Beef" value="Extra Beef">
             <label for="extraBeef">Extra Beef</label><br>
-        <input type="radio" id="halfBeef" name="halfBeef" value="Half Beef">
+        <input type="radio" id="halfBeef" name="Beef" value="Half Beef">
             <label for="halfBeef">Half Beef</label><br>
 
 
@@ -89,9 +91,9 @@ window.addEventListener("load", function () {
         <input class= "check" type="checkbox" id="pineappleOption" name="pineappleOption" value="Pineapple" onclick="ToppingsChanged()">
             <label for="pineappleOption">Pineapple</label><br> 
         <!--radio pineapple options-->
-        <input type="radio" id="extraPine" name="extraPine" value="Extra Pineapple">
+        <input type="radio" id="extraPine" name="Pineapple" value="Extra Pineapple">
             <label for="extraPine">Extra Pineapple</label><br>
-        <input type="radio" id="halfPine" name="halfPine" value="Half Pineapple">
+        <input type="radio" id="halfPine" name="Pineapple" value="Half Pineapple">
             <label for="halfPine">Half Pineapple</label><br>
 
 
@@ -99,9 +101,9 @@ window.addEventListener("load", function () {
         <input class= "check" type="checkbox" id="baconOption" name="baconOption" value="Bacon" onclick="ToppingsChanged()">
             <label for="baconOption">Bacon</label><br>
         <!--radio bacon options-->
-        <input type="radio" id="extraBacon" name="extraBacon" value="Extra Bacon">
+        <input type="radio" id="extraBacon" name="Bacon" value="Extra Bacon">
             <label for="extraBeef">Extra Bacon</label><br>
-        <input type="radio" id="halfBacon" name="halfBacon" value="Half Bacon">
+        <input type="radio" id="halfBacon" name="Bacon" value="Half Bacon">
             <label for="halfBacon">Half Bacon</label><br>
 
 
@@ -109,9 +111,9 @@ window.addEventListener("load", function () {
         <input class= "check" type="checkbox" id="onionsOption" name="onionsOption" value="Onions" onclick="ToppingsChanged()">
             <label for="onionsOption">Onions</label><br>    
         <!--radio onion options-->
-        <input type="radio" id="extraOnion" name="extraOnion" value="Extra Onion">
+        <input type="radio" id="extraOnion" name="Onions" value="Extra Onion">
             <label for="extraOnion">Extra Onion</label><br>
-        <input type="radio" id="halfOnion" name="halfOnion" value="Half Onion">
+        <input type="radio" id="halfOnion" name="Onions" value="Half Onion">
             <label for="halfOnion">Half Onion</label><br>
 
 
@@ -119,9 +121,9 @@ window.addEventListener("load", function () {
         <input class= "check" type="checkbox" id="olivesOption" name="olivesOption" value="Olives" onclick="ToppingsChanged()">
             <label for="olivesOption">Olives</label><br>
         <!--radio olives options-->
-        <input type="radio" id="extraOlives" name="extraOlives" value="Extra Olives">
+        <input type="radio" id="extraOlives" name="Olives" value="Extra Olives">
             <label for="extraOlvies">Extra Olives</label><br>
-        <input type="radio" id="halfOlives" name="halfOlives" value="Half Olives">
+        <input type="radio" id="halfOlives" name="Olives" value="Half Olives">
             <label for="halfOlvies">Half Olives</label><br>
 
 
@@ -129,9 +131,9 @@ window.addEventListener("load", function () {
         <input class= "check" type="checkbox" id="mushroomsOption" name="mushroomsOption" value="Mushrooms" onclick="ToppingsChanged()">
             <label for="mushroomsOption">Mushrooms</label><br>
         <!--radio mushrooms options-->
-        <input type="radio" id="extraMush" name="extraMush" value="Extra Mushrooms">
+        <input type="radio" id="extraMush" name="Mushrooms" value="Extra Mushrooms">
             <label for="extraMush">Extra Mushrooms</label><br>
-        <input type="radio" id="halfMush" name="halfMush" value="Half Mushrooms">
+        <input type="radio" id="halfMush" name="Mushrooms" value="Half Mushrooms">
             <label for="halfMush">Half Mushrooms</label><br>
 
 
@@ -139,104 +141,31 @@ window.addEventListener("load", function () {
         <input class= "check" type="checkbox" id="bananaPeppersOption" name="bananaPeppersOption" value="Banana Peppers" onclick="ToppingsChanged()"> 
             <label for="bananaPeppersOption">Banana Peppers</label><br>
         <!--radio banana peppers options-->
-        <input type="radio" id="extraBP" name="extraBP" value="Extra Banana Peppers">
+        <input type="radio" id="extraBP" name="BananaPeppers" value="Extra Banana Peppers">
             <label for="extraBP">Extra Banana Peppers </label><br>
-        <input type="radio" id="halfBP" name="halfBP" value="Half Banana Peppers">
+        <input type="radio" id="halfBP" name="BananaPeppers" value="Half Banana Peppers">
             <label for="halfBP">Half Banana Peppers</label><br>
     </div>
 
     <div class="premadeOptions">
         <h1>Premade Pizza Options</h1>    
-        <input class= "check" type="checkbox" id="Pepperoni" name="Pepperoni" value="Pepperoni Pizza" onclick="PremadeChanged()">
+        <input class= "check" type="checkbox" id="Pepperoni" name="premadeOptions" value="Pepperoni Pizza" onclick="PremadeChanged()">
             <label for="Pepperoni">Pepperoni Pizza</label><br>    
-        <input class= "check" type="checkbox" id="MeatLovers" name="Meat Lovers" value="Meat Lovers Pizza" onclick="PremadeChanged()">
+        <input class= "check" type="checkbox" id="MeatLovers" name="premadeOptions" value="Meat Lovers Pizza" onclick="PremadeChanged()">
             <label for="Meat Lovers">Meat Lovers</label><br>
-        <input class= "check" type="checkbox" id="Cheese" name="Cheese" value="Cheese Pizza" onclick="PremadeChanged()">
+        <input class= "check" type="checkbox" id="Cheese" name="premadeOptions" value="Cheese Pizza" onclick="PremadeChanged()">
             <label for="Cheese">Cheese Pizza</label><br>    
-        <input class= "check" type="checkbox" id="Hawaiian" name="Hawaiian" value="Hawaiian Pizza" onclick="PremadeChanged()">
+        <input class= "check" type="checkbox" id="Hawaiian" name="premadeOptions" value="Hawaiian Pizza" onclick="PremadeChanged()">
             <label for="Hawaiian">Hawaiian Pizza</label><br>
-        <input class= "check" type="checkbox" id="DeepDish" name="DeepDish" value="Chicago Deep Dish Pizza" onclick="PremadeChanged()">
+        <input class= "check" type="checkbox" id="DeepDish" name="premadeOptions" value="Chicago Deep Dish Pizza" onclick="PremadeChanged()">
             <label for="DeepDish">Chicago Deep Dish</label><br>                   
         </div>
     </div>
 </div>
-</div>
-
 <script src="controller.js"></script>
-
+<script src="Pizza.js"></script>
 `;
 
-Init();
-});
-
-
-
-// var total = 0;
-// addTopping(topping); {
-//     This.total += topping.cost;
-//     document.getElementByID("total").innerHTML = this.total;
-// }
-
-// if (topping >= 2 < 5 || topping.extra) {
-//     total + 1;
-//     console.log(this.total);
-// } else if (topping = 5) {
-//     total + 3;
-//     console.log(this.total);
-// } else if (topping > 5) {
-//     total + 4
-//     console.log("Special Deal " + this.total);
-
-// } else {
-//     console.log(this.total);
-// }
-
-
-
-// function size1() {
-//     var checkbox = document.getElementById("XL");
-//     var text = document.getElementById("text1");
-
-//     if (checkbox.checked == true) {
-//         text.style.display = "block";
-//     } else {
-//         text.style.display = "none";
-//     }
-// }
-
-// function size2() {
-//     var checkbox = document.getElementById("Large");
-//     var text = document.getElementById("text2");
-
-//     if (checkbox.checked == true) {
-//         text.style.display = "block";
-//     } else {
-//         text.style.display = "none";
-//     }
-// }
-
-// function size3() {
-//     var checkbox = document.getElementById("Medium");
-//     var text = document.getElementById("text3");
-
-//     if (checkbox.checked == true) {
-//         text.style.display = "block";
-//     } else {
-//         text.style.display = "none";
-//     }
-// }
-
-// function size4() {
-//     var checkbox = document.getElementById("Small");
-//     var text = document.getElementById("text4");
-
-//     if (checkbox.checked == true) {
-//         text.style.display = "block";
-//     } else {
-//         text.style.display = "none";
-//     }
-
-// }
 
 function Init() {
     XtraLarge = document.getElementById('XL').value;
@@ -432,4 +361,34 @@ function ToppingsChanged() {
 function PremadeChanged() {
     premade = document.getElementById('').value;
     UpdatePizza();
+}
+
+
+function updatePage() {
+    // updatePizza();
+    updatePrice();
+}
+
+function updatePrice() {
+
+    var toppings = getToppings();
+}
+
+function getToppings() {
+    /*
+    check if each box is checked, if so add it to the list
+    */
+}
+
+function getToppings(){
+    var checks = document.getElementsByClassName("check");
+    var str = [];
+
+    for( i = 0; i < checks.length; i++) {
+        if (checks[i].checked == true) {
+            str[i] = checks[i].value;
+        }
+    }
+
+    return str;
 }
