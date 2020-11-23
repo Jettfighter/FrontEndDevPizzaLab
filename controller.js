@@ -10,7 +10,7 @@ window.addEventListener("load", function () {
 <div id="EntireWidget" class="layout">
 <div class="verticalDisplay">
     <div class="pizzaNav">
-
+        <h1>Je Suis Un Pizza</h1>
     </div>
 
     <div class="pizzaAndPrice">
@@ -28,7 +28,9 @@ window.addEventListener("load", function () {
             <div id="price" >$0.00</div>
         </div>
 
-        <button href="#" onclick="getToppings() ; return false;" class="orderbutton">ADD TO ORDER</button>
+        
+        <button href="#" onclick="getToppings() ; return false;" class="orderbutton" data-toggle="modal" data-target="#pizzaAdded">ADD TO ORDER</button>
+
     </div>
 
     </div>
@@ -170,7 +172,22 @@ window.addEventListener("load", function () {
             <label for="DeepDish">Chicago Deep Dish</label><br>                   
         </div>
     </div>
+
+        <div class="modal" id="pizzaAdded">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title">Je Suis Une Pizza</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">Your order has been completed! Thank you for dining with us :)</div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+
 </div>
+        
 <script src="controller.js"></script>
 <script src="Pizza.js"></script>
 `;

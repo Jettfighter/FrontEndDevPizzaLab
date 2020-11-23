@@ -1,3 +1,9 @@
+@font-face {
+    font-family: titleFont;
+    src: url(Lobster-Regular.ttf);
+  }
+
+
 html {
     background-color: darkslategray;
 }
@@ -17,6 +23,11 @@ html {
     border-radius: 15px;
     padding: 10px;
     background-color: white;
+    h1{
+        font-family: 'Dancing Script', cursive;
+        font-size: 250%;
+        margin-left: 35%;
+    }
 }
 
 .pizzaAndPrice {
@@ -32,11 +43,13 @@ html {
 }
 
 .pizzaOptions {
-
     border: 3px solid green;
     border-radius: 15px;
     padding: 10px;
     background-color: white;
+    h1{
+        font-family: 'Dancing Script', cursive;
+    }
 }
 
 
