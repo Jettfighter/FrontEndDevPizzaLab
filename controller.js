@@ -13,10 +13,9 @@ entrypoint.innerHTML =
         </div>
 
         <div class="pizzaAndPrice">
-
             <div class="pizzadisplay">
-
             </div>
+
             <div class="AddToOrderWidget">
                 <div id="toppingListDisplay"></div>
 
@@ -175,56 +174,6 @@ entrypoint.innerHTML =
 `;
 })
 
-// var layout = document.getElementById('EntireWidget');
-// layout.addEventListener("change", function() {
-//     updatePage();
-// })
-
-// var thePizza = new Pizza("XL", [], "Plain Pizza");
-
-function size1(){
-    var checkbox = document.getElementById("XL");
-    var text = document.getElementById("text1");
-    if (checkbox.checked == true){
-        text.style.display = "block";
-    } else {
-        text.style.display = "none";
-    }
-}
-
-function size2(){
-    var checkbox = document.getElementById("Large");
-    var text = document.getElementById("text2");
-
-    if (checkbox.checked == true){
-        text.style.display = "block";
-    } else {
-        text.style.display = "none";
-    }
-}
-
-function size3(){
-    var checkbox = document.getElementById("Medium");
-    var text = document.getElementById("text3");
-
-    if (checkbox.checked == true){
-        text.style.display = "block";
-    } else {
-        text.style.display = "none";
-    }
-}
-
-function size4(){
-    var checkbox = document.getElementById("Small");
-    var text = document.getElementById("text4");
-
-    if (checkbox.checked == true){
-        text.style.display = "block";
-    } else {
-        text.style.display = "none";
-    }
-}
-
 function updatePage() {
     // updatePizza();
     updatePrice();
@@ -233,12 +182,8 @@ function updatePage() {
 function updatePrice() {
 
     var toppings = getToppings();
-}
 
-function getToppings() {
-    /*
-    check if each box is checked, if so add it to the list
-    */
+    var price = calculatePrice(toppings);
 }
 
 function getToppings(){
