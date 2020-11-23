@@ -7,7 +7,6 @@ window.addEventListener("load", function () {
 
     entrypoint.innerHTML =
 `
-
 <div id="EntireWidget" class="layout">
 <div class="verticalDisplay">
     <div class="pizzaNav">
@@ -19,9 +18,18 @@ window.addEventListener("load", function () {
         <div class="pizzadisplay">
             <canvas id="pizzaCanvas" name="pizzaCanvas" height="350" width="350"></canvas>
         </div>
+
         <div class="AddToOrderWidget">
-            <button>ADD TO ORDER</button>
+        <div id="toppingListDisplay"></div>
+
+        <div class="pricearea">
+            <div >Total:</div>
+            <div id="price" >$0.00</div>
         </div>
+
+        <button href="#" onclick="getToppings() ; return false;" class="orderbutton">ADD TO ORDER</button>
+    </div>
+
     </div>
 
     <div class="pizzaOptions">
@@ -149,15 +157,15 @@ window.addEventListener("load", function () {
 
     <div class="premadeOptions">
         <h1>Premade Pizza Options</h1>    
-        <input class= "check" type="checkbox" id="Pepperoni" name="premadeOptions" value="Pepperoni Pizza" onclick="PremadeChanged()">
+        <input class= "check" type="radio" id="Pepperoni" name="premadeOptions" value="Pepperoni Pizza" onclick="PremadeChanged()">
             <label for="Pepperoni">Pepperoni Pizza</label><br>    
-        <input class= "check" type="checkbox" id="MeatLovers" name="premadeOptions" value="Meat Lovers Pizza" onclick="PremadeChanged()">
+        <input class= "check" type="radio" id="MeatLovers" name="premadeOptions" value="Meat Lovers Pizza" onclick="PremadeChanged()">
             <label for="Meat Lovers">Meat Lovers</label><br>
-        <input class= "check" type="checkbox" id="Cheese" name="premadeOptions" value="Cheese Pizza" onclick="PremadeChanged()">
+        <input class= "check" type="radio" id="Cheese" name="premadeOptions" value="Cheese Pizza" onclick="PremadeChanged()">
             <label for="Cheese">Cheese Pizza</label><br>    
-        <input class= "check" type="checkbox" id="Hawaiian" name="premadeOptions" value="Hawaiian Pizza" onclick="PremadeChanged()">
+        <input class= "check" type="radio" id="Hawaiian" name="premadeOptions" value="Hawaiian Pizza" onclick="PremadeChanged()">
             <label for="Hawaiian">Hawaiian Pizza</label><br>
-        <input class= "check" type="checkbox" id="DeepDish" name="premadeOptions" value="Chicago Deep Dish Pizza" onclick="PremadeChanged()">
+        <input class= "check" type="radio" id="DeepDish" name="premadeOptions" value="Chicago Deep Dish Pizza" onclick="PremadeChanged()">
             <label for="DeepDish">Chicago Deep Dish</label><br>                   
         </div>
     </div>
@@ -375,12 +383,8 @@ function updatePage() {
 function updatePrice() {
 
     var toppings = getToppings();
-}
 
-function getToppings() {
-    /*
-    check if each box is checked, if so add it to the list
-    */
+    var price = calculatePrice(toppings);
 }
 
 function getToppings(){
