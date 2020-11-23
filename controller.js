@@ -174,53 +174,13 @@ window.addEventListener("load", function () {
 <script src="controller.js"></script>
 <script src="Pizza.js"></script>
 `;
-Init();
+    Init();
 
-var layout = document.getElementById('EntireWidget');
-layout.addEventListener("change", function() {
-    updatePage();
-})
+    var layout = document.getElementById('EntireWidget');
+    layout.addEventListener("change", function () {
+        updatePage();
+    });
 });
-
-var XtraLarge = false;
-var Large = false;
-var Medium = false;
-var Small = false;
-var Pepperoni = false;
-var PepHalf = false;
-var PepXtra = false;
-var Sausage = false;
-var SausHalf = false;
-var SausXtra = false;
-var Ham = false;
-var HamHalf = false;
-var HamXtra = false;
-var Beef = false;
-var BeefHalf = false;
-var BeefXtra = false;
-var Pineapple = false;
-var PineHalf = false;
-var PineXtra = false;
-var Bacon = false;
-var BaconHalf = false;
-var BaconXtra = false;
-var Onions = false;
-var OnionsHalf = false;
-var OnionsXtra = false;
-var Olives = false;
-var OlivesHalf = false;
-var OlivesXtra = false;
-var Mushrooms = false;
-var MushHalf = false;
-var MushXtra = false;
-var BananaPeppers = false;
-var BPHalf = false;
-var BPXtra = false;
-var PremadePepperoni = false;
-var PremadeMeatLovers = false;
-var PremadeCheese = false;
-var PremadeHawaiian = false;
-var PremadeDeepDish = false;
 
 function Init() {
     XtraLarge = document.getElementById('XL').checked;
@@ -269,46 +229,39 @@ function UpdatePizza() {
     var context = document.getElementById("pizzaCanvas").getContext("2d");
     context.clearRect(0, 0, 350, 350);
 
+    if (XtraLarge) {
+        context.beginPath();
+        context.arc(175, 175, 150, 0, 2 * Math.PI);
+        context.fillStyle = "#c39b77";
+        context.fill();
+        context.stroke();
+    } else if (Large) {
+        context.beginPath();
+        context.arc(175, 175, 125, 0, 2 * Math.PI);
+        context.fillStyle = "#c39b77";
+        context.fill();
+        context.stroke();
+    } else if (Medium) {
+        context.beginPath();
+        context.arc(175, 175, 100, 0, 2 * Math.PI);
+        context.fillStyle = "#c39b77";
+        context.fill();
+        context.stroke();
+    } else if (Small) {
+        context.beginPath();
+        context.arc(175, 175, 75, 0, 2 * Math.PI);
+        context.fillStyle = "#c39b77";
+        context.fill();
+        context.stroke();
+    }
+
     for (var i = 0; i < 5; i++) {
-        var ratio = 3 - (i * 0.1);
+        var ratio = 2 - (i * 0.1);
         var height = 50;
         var width = 100;
         var xStart = 130 + ((width - (width * ratio)) / 2);
         var yStart = 250 - (height * i);
 
-
-        if (XtraLarge) {
-            console.log(XtraLarge);
-            context.beginPath();
-            context.arc(175, 175, 150, 0, 2 * Math.PI);
-            context.fillStyle = "#c39b77";
-            context.fill();
-            context.stroke();
-        } else if (Large) {
-            console.log("Large...");
-            context.beginPath();
-            context.arc(175, 175, 125, 0, 2 * Math.PI);
-            context.stroke();
-            context.fillStyle = "#c39b77";
-            context.fill();
-            context.stroke();
-        } else if (Medium) {
-            console.log("Medium...");
-            context.beginPath();
-            context.arc(175, 175, 100, 0, 2 * Math.PI);
-            context.stroke();
-            context.fillStyle = "#c39b77";
-            context.fill();
-            context.stroke();
-        } else if (Small) {
-            console.log("Small...");
-            context.beginPath();
-            context.arc(175, 175, 75, 0, 2 * Math.PI);
-            context.stroke();
-            context.fillStyle = "#c39b77";
-            context.fill();
-            context.stroke();
-        }
         if (Pepperoni) {
             context.fillStyle = "red";
             for (var pep = 0; pep < width * ratio; pep += (width * ratio) / 5) {
@@ -324,12 +277,26 @@ function UpdatePizza() {
                 context.arc(xStart + pep + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
                 context.fill();
             }
-        } else if (PepHalf) {
-            context.fillStyle = "";
-        } else if (PepXtra) {
-            context.fillStyle = "";
-        } 
-        
+        }
+        if (PepHalf) {
+
+        }
+        if (PepXtra) {
+            context.fillStyle = "red";
+            for (var pepXtra = 0; pepXtra < width * ratio; pepXtra += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + pepXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + pepXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + pepXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        }
         if (Sausage) {
             context.fillStyle = "brown";
             for (var saus = 0; saus < width * ratio; saus += (width * ratio) / 5) {
@@ -345,12 +312,26 @@ function UpdatePizza() {
                 context.arc(xStart + saus + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
                 context.fill();
             }
-        } else if (SausHalf) {
+        }
+        if (SausHalf) {
+
+        }
+        if (SausXtra) {
             context.fillStyle = "brown";
-        } else if (SausXtra) {
-            context.fillStyle = "brown";
-        } 
-        
+            for (var sausXtra = 0; sausXtra < width * ratio; sausXtra += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + sausXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + sausXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + sausXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        }
         if (Ham) {
             context.fillStyle = "pink";
             for (var hams = 0; hams < width * ratio; hams += (width * ratio) / 5) {
@@ -366,12 +347,26 @@ function UpdatePizza() {
                 context.arc(xStart + hams + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
                 context.fill();
             }
-        } else if (HamHalf) {
+        }
+        if (HamHalf) {
+
+        }
+        if (HamXtra) {
             context.fillStyle = "pink";
-        } else if (HamXtra) {
-            context.fillStyle = "pink";
-        } 
-        
+            for (var hamsXtra = 0; hamsXtra < width * ratio; hamsXtra += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + hamsXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + hamsXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + hamsXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        }
         if (Beef) {
             context.fillStyle = "brown";
             for (var beefs = 0; beefs < width * ratio; beefs += (width * ratio) / 5) {
@@ -387,12 +382,26 @@ function UpdatePizza() {
                 context.arc(xStart + beefs + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
                 context.fill();
             }
-        } else if (BeefHalf) {
+        }
+        if (BeefHalf) {
+
+        }
+        if (BeefXtra) {
             context.fillStyle = "brown";
-        } else if (BeefXtra) {
-            context.fillStyle = "brown";
-        } 
-        
+            for (var beefsXtra = 0; beefsXtra < width * ratio; beefsXtra += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + beefsXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + beefsXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + beefsXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        }
         if (Pineapple) {
             context.fillStyle = "yellow";
             for (var pin = 0; pin < width * ratio; pin += (width * ratio) / 5) {
@@ -408,12 +417,26 @@ function UpdatePizza() {
                 context.arc(xStart + pin + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
                 context.fill();
             }
-        } else if (PineHalf) {
+        }
+        if (PineHalf) {
+
+        }
+        if (PineXtra) {
             context.fillStyle = "yellow";
-        } else if (PineXtra) {
-            context.fillStyle = "yellow";
-        } 
-        
+            for (var pinXtra = 0; pinXtra < width * ratio; pinXtra += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + pinXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + pinXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + pinXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        }
         if (Bacon) {
             context.fillStyle = "pink";
             for (var bac = 0; bac < width * ratio; bac += (width * ratio) / 5) {
@@ -429,12 +452,26 @@ function UpdatePizza() {
                 context.arc(xStart + bac + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
                 context.fill();
             }
-        } else if (BaconHalf) {
+        }
+        if (BaconHalf) {
+
+        }
+        if (BaconXtra) {
             context.fillStyle = "pink";
-        } else if (BaconXtra) {
-            context.fillStyle = "pink";
-        } 
-        
+            for (var bacXtra = 0; bacXtra < width * ratio; bacXtra += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + bacXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + bacXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + bacXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        }
         if (Onions) {
             context.fillStyle = "white";
             for (var oni = 0; oni < width * ratio; oni += (width * ratio) / 5) {
@@ -450,12 +487,26 @@ function UpdatePizza() {
                 context.arc(xStart + oni + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
                 context.fill();
             }
-        } else if (OnionsHalf) {
+        }
+        if (OnionsHalf) {
+
+        }
+        if (OnionsXtra) {
             context.fillStyle = "white";
-        } else if (OnionsXtra) {
-            context.fillStyle = "white";
-        } 
-        
+            for (var oniXtra = 0; oniXtra < width * ratio; oniXtra += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + oniXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + oniXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + oniXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        }
         if (Olives) {
             context.fillStyle = "black";
             for (var oli = 0; oli < width * ratio; oli += (width * ratio) / 5) {
@@ -471,12 +522,26 @@ function UpdatePizza() {
                 context.arc(xStart + oli + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
                 context.fill();
             }
-        } else if (OlivesHalf) {
+        }
+        if (OlivesHalf) {
+
+        }
+        if (OlivesXtra) {
             context.fillStyle = "black";
-        } else if (OlivesXtra) {
-            context.fillStyle = "black";
-        } 
-        
+            for (var oliXtra = 0; oliXtra < width * ratio; oliXtra += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + oliXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + oliXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + oliXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        }
         if (Mushrooms) {
             context.fillStyle = "gray";
             for (var mus = 0; mus < width * ratio; mus += (width * ratio) / 5) {
@@ -492,12 +557,26 @@ function UpdatePizza() {
                 context.arc(xStart + mus + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
                 context.fill();
             }
-        } else if (MushHalf) {
+        }
+        if (MushHalf) {
+
+        }
+        if (MushXtra) {
             context.fillStyle = "gray";
-        } else if (MushXtra) {
-            context.fillStyle = "gray";
-        } 
-        
+            for (var musXtra = 0; musXtra < width * ratio; musXtra += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + musXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + musXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + musXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        }
         if (BananaPeppers) {
             context.fillStyle = "yellow";
             for (var ban = 0; ban < width * ratio; ban += (width * ratio) / 5) {
@@ -513,10 +592,25 @@ function UpdatePizza() {
                 context.arc(xStart + ban + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
                 context.fill();
             }
-        } else if (BPHalf) {
+        }
+        if (BPHalf) {
+
+        }
+        if (BPXtra) {
             context.fillStyle = "yellow";
-        } else if (BPXtra) {
-            context.fillStyle = "yellow";
+            for (var banXtra = 0; banXtra < width * ratio; banXtra += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + banXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + banXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(150 + ((width - (width * ratio)) / 2) + banXtra + ((width * ratio) / 20), 200 - (height * i) + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
         }
         if (PremadePepperoni) {
             context.fillStyle = "red";
@@ -534,9 +628,26 @@ function UpdatePizza() {
                 context.fill();
             }
         } else if (PremadeMeatLovers) {
-            context.fillStyle = "";
+            for (var preMeat = 0; preMeat < width * ratio; preMeat += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(xStart + preMeat + ((width * ratio) / 20), yStart + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fillStyle = "red";
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + preMeat + ((width * ratio) / 7), yStart + 25, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fillStyle = "pink";
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + preMeat + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fillStyle = "brown";
+                context.fill();
+            }
         } else if (PremadeCheese) {
-            context.fillStyle = "yellow";
+            context.fillStyle = "#ffdb58";
+            context.fill();
+            context.stroke();
         } else if (PremadeHawaiian) {
             context.fillStyle = "yellow";
             for (var prePine = 0; prePine < width * ratio; prePine += (width * ratio) / 5) {
@@ -553,7 +664,9 @@ function UpdatePizza() {
                 context.fill();
             }
         } else if (PremadeDeepDish) {
-            context.fillStyle = "red";
+            context.fillStyle = "#9b111e";
+            context.fill();
+            context.stroke();
         }
     }
 }
@@ -566,46 +679,44 @@ function SizeChanged() {
 }
 
 function ToppingsChanged() {
-    Pepperoni = document.getElementById('pepperoniOption').checked;
-    PepHalf = document.getElementById('halfPep').checked;
-    PepXtra = document.getElementById('extraPep').checked;
-    Sausage = document.getElementById('sausageOption').checked;
-    SausHalf = document.getElementById('halfSaus').checked;
-    SausXtra = document.getElementById('extraSaus').checked;
-    Ham = document.getElementById('hamOption').checked;
-    HamHalf = document.getElementById('halfHam').checked;
-    HamXtra = document.getElementById('extraHam').checked;
-    Beef = document.getElementById('beefOption').checked;
-    BeefHalf = document.getElementById('halfBeef').checked;
-    BeefXtra = document.getElementById('extraBeef').checked;
-    Pineapple = document.getElementById('pineappleOption').checked;
-    PineHalf = document.getElementById('halfPine').checked;
-    PineXtra = document.getElementById('extraPine').checked;
-    Bacon = document.getElementById('baconOption').checked;
-    BaconHalf = document.getElementById('halfBacon').checked;
-    BaconXtra = document.getElementById('extraBacon').checked;
-    Onions = document.getElementById('onionsOption').checked;
-    OnionsHalf = document.getElementById('halfOnion').checked;
-    OnionsXtra = document.getElementById('extraOnion').checked;
-    Olives = document.getElementById('olivesOption').checked;
-    OlivesHalf = document.getElementById('halfOlives').checked;
-    OlivesXtra = document.getElementById('extraOlives').checked;
-    Mushrooms = document.getElementById('mushroomsOption').checked;
-    MushHalf = document.getElementById('halfMush').checked;
-    MushXtra = document.getElementById('extraMush').checked;
-    BananaPeppers = document.getElementById('bananaPeppersOption').checked;
-    BPHalf = document.getElementById('halfBP').checked;
-    BPXtra = document.getElementById('extraBP').checked;
+    Pepperoni = document.getElementById('pepperoniOption').checked = false;
+    PepHalf = document.getElementById('halfPep').checked = false;
+    PepXtra = document.getElementById('extraPep').checked = false;
+    Sausage = document.getElementById('sausageOption').checked = false;
+    SausHalf = document.getElementById('halfSaus').checked = false;
+    SausXtra = document.getElementById('extraSaus').checked = false;
+    Ham = document.getElementById('hamOption').checked = false;
+    HamHalf = document.getElementById('halfHam').checked = false;
+    HamXtra = document.getElementById('extraHam').checked = false;
+    Beef = document.getElementById('beefOption').checked = false;
+    BeefHalf = document.getElementById('halfBeef').checked = false;
+    BeefXtra = document.getElementById('extraBeef').checked = false;
+    Pineapple = document.getElementById('pineappleOption').checked = false;
+    PineHalf = document.getElementById('halfPine').checked = false;
+    PineXtra = document.getElementById('extraPine').checked = false;
+    Bacon = document.getElementById('baconOption').checked = false;
+    BaconHalf = document.getElementById('halfBacon').checked = false;
+    BaconXtra = document.getElementById('extraBacon').checked = false;
+    Onions = document.getElementById('onionsOption').checked = false;
+    OnionsHalf = document.getElementById('halfOnion').checked = false;
+    OnionsXtra = document.getElementById('extraOnion').checked = false;
+    Olives = document.getElementById('olivesOption').checked = false;
+    OlivesHalf = document.getElementById('halfOlives').checked = false;
+    OlivesXtra = document.getElementById('extraOlives').checked = false;
+    Mushrooms = document.getElementById('mushroomsOption').checked = false;
+    MushHalf = document.getElementById('halfMush').checked = false;
+    MushXtra = document.getElementById('extraMush').checked = false;
+    BananaPeppers = document.getElementById('bananaPeppersOption').checked = false;
+    BPHalf = document.getElementById('halfBP').checked = false;
+    BPXtra = document.getElementById('extraBP').checked = false;
 }
 
 function PremadeChanged() {
-    BPHalf = document.getElementById('halfBP').checked;
-    BPXtra = document.getElementById('extraBP').checked;
-    PremadePepperoni = document.getElementById('Pepperoni').checked;
-    PremadeMeatLovers = document.getElementById('MeatLovers').checked;
-    PremadeCheese = document.getElementById('Cheese').checked;
-    PremadeHawaiian = document.getElementById('Hawaiian').checked;
-    PremadeDeepDish = document.getElementById('DeepDish').checked;
+    PremadePepperoni = document.getElementById('Pepperoni').checked = false;
+    PremadeMeatLovers = document.getElementById('MeatLovers').checked = false;
+    PremadeCheese = document.getElementById('Cheese').checked = false;
+    PremadeHawaiian = document.getElementById('Hawaiian').checked = false;
+    PremadeDeepDish = document.getElementById('DeepDish').checked = false;
 }
 
 
@@ -659,22 +770,22 @@ function calculatePrice(list) {
 
 function updateSign(list) {
     var specialSign = document.getElementById("specialSign");
-    if (list.length >=5) {
+    if (list.length >= 5) {
         specialSign.textContent = "SPECIAL DEAL!!!";
     }
 }
 
 function populateToppingList(list) {
     var str = "";
-    
+
     for (let i = 0; i < list.length; i++) {
-        if(list.length == 1) {
+        if (list.length == 1) {
             str = list[i];
             break;
         }
-        if (i < list.length-1) {
+        if (i < list.length - 1) {
             str += list[i] + ", ";
-        } else if (i == list.length-1) {
+        } else if (i == list.length - 1) {
             str += "and " + list[i];
         }
     }
