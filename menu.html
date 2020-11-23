@@ -25,7 +25,7 @@
                         <div id="price" >$0.00</div>
                     </div>
 
-                    <button class="orderbutton">ADD TO ORDER</button>
+                    <button href="#" onclick="getValue() ; return false;" class="orderbutton">ADD TO ORDER</button>
                 </div>
             </div>
 
@@ -33,19 +33,19 @@
 
                 <div class="pizzaSizes">
                     <h1>Pizza Sizes</h1>
-                    <input class= "check" type="radio" id="XL" name="XL" value="Extra Large" onclick="size1()">
+                    <input class= "sizeCheck" type="radio" id="XL" name="size" value="Extra Large" onclick="size1()">
                         <label for="XL">Extra Large</label><br>
                         <p id="text1" style="display: none"> $20</p>
 
-                    <input class= "check" type="radio" id="Large" name="Large" value="Large" onclick="size2()">
+                    <input class= "sizeCheck" type="radio" id="Large" name="size" value="Large" onclick="size2()">
                         <label for="Large">Large</label><br>
                         <p id="text2" style="display: none"> $15</p>
 
-                    <input class= "check" type="radio" id="Medium" name="Medium" value="Medium" onclick="size3()">
+                    <input class= "sizeCheck" type="radio" id="Medium" name="size" value="Medium" onclick="size3()">
                         <label for="Medium">Medium</label><br>
                         <p id="text3" style="display: none"> $10</p>
 
-                    <input class= "check" type="radio" id="Small" name="Small" value="Small" onclick="size4()">
+                    <input class= "sizeCheck" type="radio" id="Small" name="size" value="Small" onclick="size4()">
                         <label for="Small">Small</label><br>
                         <p id="text4" style="display: none"> $6</p>    
 
@@ -152,34 +152,21 @@
                 </div>
 
                 <div class="premadeOptions">
-                    <h1>Premade Pizza Options</h1>    
-                    <input class= "check" type="checkbox" id="Pepperoni" name="Pepperoni" value="Pepperoni Pizza">
+                    <h1>Premade Pizza Options</h1>
+                    <input class= "premadeCheck" type="radio" id="Pepperoni" name="premade" value="Pepperoni Pizza">
                         <label for="Pepperoni">Pepperoni Pizza</label><br>    
-                    <input class= "check" type="checkbox" id="Meat Lovers" name="Meat Lovers" value="Meat Lovers Pizza">
+                    <input class= "premadeCheck" type="radio" id="Meat Lovers" name="premade" value="Meat Lovers Pizza">
                         <label for="Meat Lovers">Meat Lovers</label><br>
-                    <input class= "check" type="checkbox" id="Cheese" name="Cheese" value="Cheese Pizza">
+                    <input class= "premadeCheck" type="radio" id="Cheese" name="premade" value="Cheese Pizza">
                         <label for="Cheese">Cheese Pizza</label><br>    
-                    <input class= "check" type="checkbox" id="Hawaiian" name="Hawaiian" value="Hawaiian Pizza">
+                    <input class= "premadeCheck" type="radio" id="Hawaiian" name="premade" value="Hawaiian Pizza">
                         <label for="Hawaiian">Hawaiian Pizza</label><br>
-                    <input class= "check" type="checkbox" id="DeepDish" name="DeepDish" value="Chicago Deep Dish Pizza">
+                    <input class= "premadeCheck" type="radio" id="DeepDish" name="premade" value="Chicago Deep Dish Pizza">
                         <label for="DeepDish">Chicago Deep Dish</label><br>
                     </div>
-                </div>
+            </div>
             <button href="#" onclick="getValue() ; return false;">Add to Order</button>
 
-            <script>
-                function getValue(){
-                    var checks = document.getElementsByClassName;
-                    var str = "";
-
-                    for( i = 0; i < 19; i++) {
-                        if (checks[i] === true) {
-                            str += checks[i].value + " ";
-                        }
-                        return console.log(str + "Thanks For Your Order");
-                    }
-                }
-            </script>
         </div>
     </div>
     
