@@ -1,0 +1,48 @@
+.layout {
+  margin: auto;
+  width: 50%;
+  height: 50%;
+  border: 3px solid green;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: lightslategray;
+}
+
+.pizzaNav {
+  border: 3px solid green;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pizzaAndPrice {
+  border: 3px solid green;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: white;
+}
+
+.pizzaOptions {
+  border: 3px solid green;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: white;
+}
+
+.row {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  margin-right: 6px;
+  background-color: #000;
+}
+
+.clear {
+  clear: both;
+}
+/*# sourceMappingURL=overlay.css.map */

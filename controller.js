@@ -45,7 +45,7 @@ function size1(){
      var checkbox = document.getElementById("XL");
      var text = document.getElementById("text1");
 
-     if (checkbox.checked == true){
+    if (checkbox.checked == true){
          text.style.display = "block";
      } else {
          text.style.display = "none";
