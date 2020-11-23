@@ -188,10 +188,12 @@ entrypoint.innerHTML =
 `;
 })
 
+
 var thePizza = new Pizza("XL", [], "Plain Pizza");
 
+function getPrice(){
 var total = 0;
-addTopping(topping); {
+ {
   This.total += topping.cost;
   document.getElementByID("total").innerHTML = this.total;
 }
@@ -211,9 +213,10 @@ if (topping >= 2 < 5 || topping.extra){
  }
  else {
      console.log(this.total)
- }
+ 
+}
 
-
+}
 
 function size1(){
     var checkbox = document.getElementById("XL");
