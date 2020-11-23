@@ -6,7 +6,7 @@ entrypoint.innerHTML = "<p>This is a piece of text</p>";
 window.addEventListener("load", function () {
 
     entrypoint.innerHTML =
-`
+        `
 <div id="EntireWidget" class="layout">
 <div class="verticalDisplay">
     <div class="pizzaNav">
@@ -182,6 +182,45 @@ layout.addEventListener("change", function() {
 })
 });
 
+var XtraLarge = false;
+var Large = false;
+var Medium = false;
+var Small = false;
+var Pepperoni = false;
+var PepHalf = false;
+var PepXtra = false;
+var Sausage = false;
+var SausHalf = false;
+var SausXtra = false;
+var Ham = false;
+var HamHalf = false;
+var HamXtra = false;
+var Beef = false;
+var BeefHalf = false;
+var BeefXtra = false;
+var Pineapple = false;
+var PineHalf = false;
+var PineXtra = false;
+var Bacon = false;
+var BaconHalf = false;
+var BaconXtra = false;
+var Onions = false;
+var OnionsHalf = false;
+var OnionsXtra = false;
+var Olives = false;
+var OlivesHalf = false;
+var OlivesXtra = false;
+var Mushrooms = false;
+var MushHalf = false;
+var MushXtra = false;
+var BananaPeppers = false;
+var BPHalf = false;
+var BPXtra = false;
+var PremadePepperoni = false;
+var PremadeMeatLovers = false;
+var PremadeCheese = false;
+var PremadeHawaiian = false;
+var PremadeDeepDish = false;
 
 function Init() {
     XtraLarge = document.getElementById('XL').value;
@@ -230,135 +269,264 @@ function UpdatePizza() {
     var context = document.getElementById("pizzaCanvas").getContext("2d");
     context.clearRect(0, 0, 350, 350);
 
-    if (XtraLarge) {
-        context.beginPath();
-        context.arc(175, 175, 150, 0, 2 * Math.PI);
-        context.fillStyle = "#c39b77";
-        context.fill();
-        context.stroke();
-    }
-    else if (Large) {
-        context.beginPath();
-        context.arc(75, 50, 50, 0, 2 * Math.PI);
-        context.stroke();
-        context.fillStyle = "#c39b77";
-    }
-    else if (Medium) {
-        context.beginPath();
-        context.arc(50, 25, 50, 0, 2 * Math.PI);
-        context.stroke();
-        context.fillStyle = "#c39b77";
-    }
-    else if (Small) {
-        context.beginPath();
-        context.arc(25, 0, 50, 0, 2 * Math.PI);
-        context.stroke();
-        context.fillStyle = "#c39b77";
-    }
-    if (Pepperoni) {
-        context.fillStyle = "red";
-    }
-    if (PepHalf) {
-        context.fillStyle = "red";
-    }
-    if (PepXtra) {
-        context.fillStyle = "red";
-    }
-    if (Sausage) {
-        context.fillStyle = "brown";
-    }
-    if (SausHalf) {
-        context.fillStyle = "brown";
-    }
-    if (SausXtra) {
-        context.fillStyle = "brown";
-    }
-    if (Ham) {
-        context.fillStyle = "pink";
-    }
-    if (HamHalf) {
-        context.fillStyle = "pink";
-    }
-    if (HamXtra) {
-        context.fillStyle = "pink";
-    }
-    if (Beef) {
-        context.fillStyle = "brown";
-    }
-    if (BeefHalf) {
-        context.fillStyle = "brown";
-    }
-    if (BeefXtra) {
-        context.fillStyle = "brown";
-    }
-    if (Pineapple) {
-        context.fillStyle = "yellow";
-    }
-    if (PineHalf) {
-        context.fillStyle = "yellow";
-    }
-    if (PineXtra) {
-        context.fillStyle = "yellow";
-    }
-    if (Bacon) {
-        context.fillStyle = "pink";
-    }
-    if (BaconHalf) {
-        context.fillStyle = "pink";
-    }
-    if (BaconXtra) {
-        context.fillStyle = "pink";
-    }
-    if (Onions) {
-        context.fillStyle = "white";
-    }
-    if (OnionsHalf) {
-        context.fillStyle = "white";
-    }
-    if (OnionsXtra) {
-        context.fillStyle = "white";
-    }
-    if (Olives) {
-        context.fillStyle = "black";
-    }
-    if (OlivesHalf) {
-        context.fillStyle = "black";
-    }
-    if (OlivesXtra) {
-        context.fillStyle = "black";
-    }
-    if (Mushrooms) {
-        context.fillStyle = "gray";
-    }
-    if (MushHalf) {
-        context.fillStyle = "gray";
-    }
-    if (MushXtra) {
-        context.fillStyle = "gray";
-    }
-    if (BananaPeppers) {
-        context.fillStyle = "yellow";
-    }
-    if (BPHalf) {
-        context.fillStyle = "yellow";
-    }
-    if (BPXtra) {
-        context.fillStyle = "yellow";
-    }
-    if (PremadePepperoni) {
-        context.fillStyle = "";
-    }
-    if (PremadeMeatLovers) {
-        context.fillStyle = "";
-    }
-    if (PremadeCheese) {
-        context.fillStyle = "";
-    }
-    if (PremadeHawaiian) {
-        context.fillStyle = "";
-    }
-    if (PremadeDeepDish) {
-        context.fillStyle = "";
+    for (var i = 0; i < 5; i++) {
+        var ratio = 3 - (i * 0.1);
+        var height = 50;
+        var width = 100;
+        var xStart = 130 + ((width - (width * ratio)) / 2);
+        var yStart = 250 - (height * i);
+
+
+        if (XtraLarge) {
+            context.beginPath();
+            context.arc(175, 175, 150, 0, 2 * Math.PI);
+            context.fillStyle = "#c39b77";
+            context.fill();
+            context.stroke();
+        } else if (Large) {
+            context.beginPath();
+            context.arc(175, 175, 125, 0, 2 * Math.PI);
+            context.stroke();
+            context.fillStyle = "#c39b77";
+        } else if (Medium) {
+            context.beginPath();
+            context.arc(175, 175, 100, 0, 2 * Math.PI);
+            context.stroke();
+            context.fillStyle = "#c39b77";
+        } else if (Small) {
+            context.beginPath();
+            context.arc(175, 175, 75, 0, 2 * Math.PI);
+            context.stroke();
+            context.fillStyle = "#c39b77";
+        }
+        if (Pepperoni) {
+            context.fillStyle = "red";
+            for (var pep = 0; pep < width * ratio; pep += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(xStart + pep + ((width * ratio) / 20), yStart + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + pep + ((width * ratio) / 7), yStart + 25, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + pep + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        } else if (PepHalf) {
+            context.fillStyle = "";
+        } else if (PepXtra) {
+            context.fillStyle = "";
+        } else if (Sausage) {
+            context.fillStyle = "brown";
+            for (var saus = 0; saus < width * ratio; saus += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(xStart + saus + ((width * ratio) / 20), yStart + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + saus + ((width * ratio) / 7), yStart + 25, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + saus + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        } else if (SausHalf) {
+            context.fillStyle = "brown";
+        } else if (SausXtra) {
+            context.fillStyle = "brown";
+        } else if (Ham) {
+            context.fillStyle = "pink";
+            for (var hams = 0; hams < width * ratio; hams += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(xStart + hams + ((width * ratio) / 20), yStart + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + hams + ((width * ratio) / 7), yStart + 25, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + hams + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        } else if (HamHalf) {
+            context.fillStyle = "pink";
+        } else if (HamXtra) {
+            context.fillStyle = "pink";
+        } else if (Beef) {
+            context.fillStyle = "brown";
+            for (var beefs = 0; beefs < width * ratio; beefs += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(xStart + beefs + ((width * ratio) / 20), yStart + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + beefs + ((width * ratio) / 7), yStart + 25, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + beefs + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        } else if (BeefHalf) {
+            context.fillStyle = "brown";
+        } else if (BeefXtra) {
+            context.fillStyle = "brown";
+        } else if (Pineapple) {
+            context.fillStyle = "yellow";
+            for (var pin = 0; pin < width * ratio; pin += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(xStart + pin + ((width * ratio) / 20), yStart + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + pin + ((width * ratio) / 7), yStart + 25, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + pin + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        } else if (PineHalf) {
+            context.fillStyle = "yellow";
+        } else if (PineXtra) {
+            context.fillStyle = "yellow";
+        } else if (Bacon) {
+            context.fillStyle = "pink";
+            for (var bac = 0; bac < width * ratio; bac += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(xStart + bac + ((width * ratio) / 20), yStart + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + bac + ((width * ratio) / 7), yStart + 25, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + bac + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        } else if (BaconHalf) {
+            context.fillStyle = "pink";
+        } else if (BaconXtra) {
+            context.fillStyle = "pink";
+        } else if (Onions) {
+            context.fillStyle = "white";
+            for (var oni = 0; oni < width * ratio; oni += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(xStart + oni + ((width * ratio) / 20), yStart + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + oni + ((width * ratio) / 7), yStart + 25, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + oni + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        } else if (OnionsHalf) {
+            context.fillStyle = "white";
+        } else if (OnionsXtra) {
+            context.fillStyle = "white";
+        } else if (Olives) {
+            context.fillStyle = "black";
+            for (var oli = 0; oli < width * ratio; oli += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(xStart + oli + ((width * ratio) / 20), yStart + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + oli + ((width * ratio) / 7), yStart + 25, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + oli + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        } else if (OlivesHalf) {
+            context.fillStyle = "black";
+        } else if (OlivesXtra) {
+            context.fillStyle = "black";
+        } else if (Mushrooms) {
+            context.fillStyle = "gray";
+            for (var mus = 0; mus < width * ratio; mus += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(xStart + mus + ((width * ratio) / 20), yStart + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + mus + ((width * ratio) / 7), yStart + 25, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + mus + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        } else if (MushHalf) {
+            context.fillStyle = "gray";
+        } else if (MushXtra) {
+            context.fillStyle = "gray";
+        } else if (BananaPeppers) {
+            context.fillStyle = "yellow";
+            for (var ban = 0; ban < width * ratio; ban += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(xStart + ban + ((width * ratio) / 20), yStart + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + ban + ((width * ratio) / 7), yStart + 25, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + ban + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        } else if (BPHalf) {
+            context.fillStyle = "yellow";
+        } else if (BPXtra) {
+            context.fillStyle = "yellow";
+        }
+        if (PremadePepperoni) {
+            context.fillStyle = "red";
+            for (var prePep = 0; prePep < width * ratio; prePep += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(xStart + prePep + ((width * ratio) / 20), yStart + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + prePep + ((width * ratio) / 7), yStart + 25, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + prePep + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        } else if (PremadeMeatLovers) {
+            context.fillStyle = "";
+        } else if (PremadeCheese) {
+            context.fillStyle = "yellow";
+        } else if (PremadeHawaiian) {
+            context.fillStyle = "yellow";
+            for (var prePine = 0; prePine < width * ratio; prePine += (width * ratio) / 5) {
+                context.beginPath();
+                context.arc(xStart + prePine + ((width * ratio) / 20), yStart + 40, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + prePine + ((width * ratio) / 7), yStart + 25, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+
+                context.beginPath();
+                context.arc(xStart + prePine + ((width * ratio) / 20), yStart + 10, 5 * ratio, 0, 2 * Math.PI, false);
+                context.fill();
+            }
+        } else if (PremadeDeepDish) {
+            context.fillStyle = "red";
+        }
     }
 }
 
@@ -371,12 +539,47 @@ function SizeChanged() {
 }
 
 function ToppingsChanged() {
-    topping = document.getElementById('').value;
+    Pepperoni = document.getElementById('pepperoniOption').value;
+    PepHalf = document.getElementById('halfPep').value;
+    PepXtra = document.getElementById('extraPep').value;
+    Sausage = document.getElementById('sausageOption').value;
+    SausHalf = document.getElementById('halfSaus').value;
+    SausXtra = document.getElementById('extraSaus').value;
+    Ham = document.getElementById('hamOption').value;
+    HamHalf = document.getElementById('halfHam').value;
+    HamXtra = document.getElementById('extraHam').value;
+    Beef = document.getElementById('beefOption').value;
+    BeefHalf = document.getElementById('halfBeef').value;
+    BeefXtra = document.getElementById('extraBeef').value;
+    Pineapple = document.getElementById('pineappleOption').value;
+    PineHalf = document.getElementById('halfPine').value;
+    PineXtra = document.getElementById('extraPine').value;
+    Bacon = document.getElementById('baconOption').value;
+    BaconHalf = document.getElementById('halfBacon').value;
+    BaconXtra = document.getElementById('extraBacon').value;
+    Onions = document.getElementById('onionsOption').value;
+    OnionsHalf = document.getElementById('halfOnion').value;
+    OnionsXtra = document.getElementById('extraOnion').value;
+    Olives = document.getElementById('olivesOption').value;
+    OlivesHalf = document.getElementById('halfOlives').value;
+    OlivesXtra = document.getElementById('extraOlives').value;
+    Mushrooms = document.getElementById('mushroomsOption').value;
+    MushHalf = document.getElementById('halfMush').value;
+    MushXtra = document.getElementById('extraMush').value;
+    BananaPeppers = document.getElementById('bananaPeppersOption').value;
+    BPHalf = document.getElementById('halfBP').value;
+    BPXtra = document.getElementById('extraBP').value;
     UpdatePizza();
 }
 
 function PremadeChanged() {
-    premade = document.getElementById('').value;
+    BPHalf = document.getElementById('halfBP').value;
+    BPXtra = document.getElementById('extraBP').value;
+    PremadePepperoni = document.getElementById('Pepperoni').value;
+    PremadeMeatLovers = document.getElementById('MeatLovers').value;
+    PremadeCheese = document.getElementById('Cheese').value;
+    PremadeHawaiian = document.getElementById('Hawaiian').value;
+    PremadeDeepDish = document.getElementById('DeepDish').value;
     UpdatePizza();
 }
 
@@ -400,12 +603,12 @@ function updatePrice() {
     populateToppingList(toppings);
 }
 
-function getToppings(){
+function getToppings() {
     var checks = document.getElementsByClassName("check");
     var str = [];
 
     var counter = 0;
-    for( i = 0; i < checks.length; i++) {
+    for (i = 0; i < checks.length; i++) {
         if (checks[i].checked == true) {
             str[counter] = checks[i].value;
             counter = counter + 1;
