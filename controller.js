@@ -18,10 +18,18 @@ window.addEventListener("load", function () {
         <div class="pizzadisplay">
             <canvas id="pizzaCanvas" name="pizzaCanvas" height="250" width="250"></canvas>
         </div>
+
         <div class="AddToOrderWidget">
-            <div id="toppingListDisplay"></div>
-            <button>ADD TO ORDER</button>
+        <div id="toppingListDisplay"></div>
+
+        <div class="pricearea">
+            <div >Total:</div>
+            <div id="price" >$0.00</div>
         </div>
+
+        <button href="#" onclick="getToppings() ; return false;" class="orderbutton">ADD TO ORDER</button>
+    </div>
+
     </div>
 
     <div class="pizzaOptions">
