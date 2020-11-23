@@ -223,45 +223,45 @@ var PremadeHawaiian = false;
 var PremadeDeepDish = false;
 
 function Init() {
-    XtraLarge = document.getElementById('XL').value;
-    Large = document.getElementById('Large').value;
-    Medium = document.getElementById('Medium').value;
-    Small = document.getElementById('Small').value;
-    Pepperoni = document.getElementById('pepperoniOption').value;
-    PepHalf = document.getElementById('halfPep').value;
-    PepXtra = document.getElementById('extraPep').value;
-    Sausage = document.getElementById('sausageOption').value;
-    SausHalf = document.getElementById('halfSaus').value;
-    SausXtra = document.getElementById('extraSaus').value;
-    Ham = document.getElementById('hamOption').value;
-    HamHalf = document.getElementById('halfHam').value;
-    HamXtra = document.getElementById('extraHam').value;
-    Beef = document.getElementById('beefOption').value;
-    BeefHalf = document.getElementById('halfBeef').value;
-    BeefXtra = document.getElementById('extraBeef').value;
-    Pineapple = document.getElementById('pineappleOption').value;
-    PineHalf = document.getElementById('halfPine').value;
-    PineXtra = document.getElementById('extraPine').value;
-    Bacon = document.getElementById('baconOption').value;
-    BaconHalf = document.getElementById('halfBacon').value;
-    BaconXtra = document.getElementById('extraBacon').value;
-    Onions = document.getElementById('onionsOption').value;
-    OnionsHalf = document.getElementById('halfOnion').value;
-    OnionsXtra = document.getElementById('extraOnion').value;
-    Olives = document.getElementById('olivesOption').value;
-    OlivesHalf = document.getElementById('halfOlives').value;
-    OlivesXtra = document.getElementById('extraOlives').value;
-    Mushrooms = document.getElementById('mushroomsOption').value;
-    MushHalf = document.getElementById('halfMush').value;
-    MushXtra = document.getElementById('extraMush').value;
-    BananaPeppers = document.getElementById('bananaPeppersOption').value;
-    BPHalf = document.getElementById('halfBP').value;
-    BPXtra = document.getElementById('extraBP').value;
-    PremadePepperoni = document.getElementById('Pepperoni').value;
-    PremadeMeatLovers = document.getElementById('MeatLovers').value;
-    PremadeCheese = document.getElementById('Cheese').value;
-    PremadeHawaiian = document.getElementById('Hawaiian').value;
-    PremadeDeepDish = document.getElementById('DeepDish').value;
+    XtraLarge = document.getElementById('XL').checked;
+    Large = document.getElementById('Large').checked;
+    Medium = document.getElementById('Medium').checked;
+    Small = document.getElementById('Small').checked;
+    Pepperoni = document.getElementById('pepperoniOption').checked;
+    PepHalf = document.getElementById('halfPep').checked;
+    PepXtra = document.getElementById('extraPep').checked;
+    Sausage = document.getElementById('sausageOption').checked;
+    SausHalf = document.getElementById('halfSaus').checked;
+    SausXtra = document.getElementById('extraSaus').checked;
+    Ham = document.getElementById('hamOption').checked;
+    HamHalf = document.getElementById('halfHam').checked;
+    HamXtra = document.getElementById('extraHam').checked;
+    Beef = document.getElementById('beefOption').checked;
+    BeefHalf = document.getElementById('halfBeef').checked;
+    BeefXtra = document.getElementById('extraBeef').checked;
+    Pineapple = document.getElementById('pineappleOption').checked;
+    PineHalf = document.getElementById('halfPine').checked;
+    PineXtra = document.getElementById('extraPine').checked;
+    Bacon = document.getElementById('baconOption').checked;
+    BaconHalf = document.getElementById('halfBacon').checked;
+    BaconXtra = document.getElementById('extraBacon').checked;
+    Onions = document.getElementById('onionsOption').checked;
+    OnionsHalf = document.getElementById('halfOnion').checked;
+    OnionsXtra = document.getElementById('extraOnion').checked;
+    Olives = document.getElementById('olivesOption').checked;
+    OlivesHalf = document.getElementById('halfOlives').checked;
+    OlivesXtra = document.getElementById('extraOlives').checked;
+    Mushrooms = document.getElementById('mushroomsOption').checked;
+    MushHalf = document.getElementById('halfMush').checked;
+    MushXtra = document.getElementById('extraMush').checked;
+    BananaPeppers = document.getElementById('bananaPeppersOption').checked;
+    BPHalf = document.getElementById('halfBP').checked;
+    BPXtra = document.getElementById('extraBP').checked;
+    PremadePepperoni = document.getElementById('Pepperoni').checked;
+    PremadeMeatLovers = document.getElementById('MeatLovers').checked;
+    PremadeCheese = document.getElementById('Cheese').checked;
+    PremadeHawaiian = document.getElementById('Hawaiian').checked;
+    PremadeDeepDish = document.getElementById('DeepDish').checked;
     UpdatePizza();
 }
 
@@ -278,26 +278,36 @@ function UpdatePizza() {
 
 
         if (XtraLarge) {
+            console.log(XtraLarge);
             context.beginPath();
             context.arc(175, 175, 150, 0, 2 * Math.PI);
             context.fillStyle = "#c39b77";
             context.fill();
             context.stroke();
         } else if (Large) {
+            console.log("Large...");
             context.beginPath();
             context.arc(175, 175, 125, 0, 2 * Math.PI);
             context.stroke();
             context.fillStyle = "#c39b77";
+            context.fill();
+            context.stroke();
         } else if (Medium) {
+            console.log("Medium...");
             context.beginPath();
             context.arc(175, 175, 100, 0, 2 * Math.PI);
             context.stroke();
             context.fillStyle = "#c39b77";
+            context.fill();
+            context.stroke();
         } else if (Small) {
+            console.log("Small...");
             context.beginPath();
             context.arc(175, 175, 75, 0, 2 * Math.PI);
             context.stroke();
             context.fillStyle = "#c39b77";
+            context.fill();
+            context.stroke();
         }
         if (Pepperoni) {
             context.fillStyle = "red";
@@ -318,7 +328,9 @@ function UpdatePizza() {
             context.fillStyle = "";
         } else if (PepXtra) {
             context.fillStyle = "";
-        } else if (Sausage) {
+        } 
+        
+        if (Sausage) {
             context.fillStyle = "brown";
             for (var saus = 0; saus < width * ratio; saus += (width * ratio) / 5) {
                 context.beginPath();
@@ -337,7 +349,9 @@ function UpdatePizza() {
             context.fillStyle = "brown";
         } else if (SausXtra) {
             context.fillStyle = "brown";
-        } else if (Ham) {
+        } 
+        
+        if (Ham) {
             context.fillStyle = "pink";
             for (var hams = 0; hams < width * ratio; hams += (width * ratio) / 5) {
                 context.beginPath();
@@ -356,7 +370,9 @@ function UpdatePizza() {
             context.fillStyle = "pink";
         } else if (HamXtra) {
             context.fillStyle = "pink";
-        } else if (Beef) {
+        } 
+        
+        if (Beef) {
             context.fillStyle = "brown";
             for (var beefs = 0; beefs < width * ratio; beefs += (width * ratio) / 5) {
                 context.beginPath();
@@ -375,7 +391,9 @@ function UpdatePizza() {
             context.fillStyle = "brown";
         } else if (BeefXtra) {
             context.fillStyle = "brown";
-        } else if (Pineapple) {
+        } 
+        
+        if (Pineapple) {
             context.fillStyle = "yellow";
             for (var pin = 0; pin < width * ratio; pin += (width * ratio) / 5) {
                 context.beginPath();
@@ -394,7 +412,9 @@ function UpdatePizza() {
             context.fillStyle = "yellow";
         } else if (PineXtra) {
             context.fillStyle = "yellow";
-        } else if (Bacon) {
+        } 
+        
+        if (Bacon) {
             context.fillStyle = "pink";
             for (var bac = 0; bac < width * ratio; bac += (width * ratio) / 5) {
                 context.beginPath();
@@ -413,7 +433,9 @@ function UpdatePizza() {
             context.fillStyle = "pink";
         } else if (BaconXtra) {
             context.fillStyle = "pink";
-        } else if (Onions) {
+        } 
+        
+        if (Onions) {
             context.fillStyle = "white";
             for (var oni = 0; oni < width * ratio; oni += (width * ratio) / 5) {
                 context.beginPath();
@@ -432,7 +454,9 @@ function UpdatePizza() {
             context.fillStyle = "white";
         } else if (OnionsXtra) {
             context.fillStyle = "white";
-        } else if (Olives) {
+        } 
+        
+        if (Olives) {
             context.fillStyle = "black";
             for (var oli = 0; oli < width * ratio; oli += (width * ratio) / 5) {
                 context.beginPath();
@@ -451,7 +475,9 @@ function UpdatePizza() {
             context.fillStyle = "black";
         } else if (OlivesXtra) {
             context.fillStyle = "black";
-        } else if (Mushrooms) {
+        } 
+        
+        if (Mushrooms) {
             context.fillStyle = "gray";
             for (var mus = 0; mus < width * ratio; mus += (width * ratio) / 5) {
                 context.beginPath();
@@ -470,7 +496,9 @@ function UpdatePizza() {
             context.fillStyle = "gray";
         } else if (MushXtra) {
             context.fillStyle = "gray";
-        } else if (BananaPeppers) {
+        } 
+        
+        if (BananaPeppers) {
             context.fillStyle = "yellow";
             for (var ban = 0; ban < width * ratio; ban += (width * ratio) / 5) {
                 context.beginPath();
@@ -531,56 +559,53 @@ function UpdatePizza() {
 }
 
 function SizeChanged() {
-    XtraLarge = document.getElementById('XL').value;
-    Large = document.getElementById('Large').value;
-    Medium = document.getElementById('Medium').value;
-    Small = document.getElementById('Small').value;
-    UpdatePizza();
+    XtraLarge = document.getElementById('XL').checked;
+    Large = document.getElementById('Large').checked;
+    Medium = document.getElementById('Medium').checked;
+    Small = document.getElementById('Small').checked;
 }
 
 function ToppingsChanged() {
-    Pepperoni = document.getElementById('pepperoniOption').value;
-    PepHalf = document.getElementById('halfPep').value;
-    PepXtra = document.getElementById('extraPep').value;
-    Sausage = document.getElementById('sausageOption').value;
-    SausHalf = document.getElementById('halfSaus').value;
-    SausXtra = document.getElementById('extraSaus').value;
-    Ham = document.getElementById('hamOption').value;
-    HamHalf = document.getElementById('halfHam').value;
-    HamXtra = document.getElementById('extraHam').value;
-    Beef = document.getElementById('beefOption').value;
-    BeefHalf = document.getElementById('halfBeef').value;
-    BeefXtra = document.getElementById('extraBeef').value;
-    Pineapple = document.getElementById('pineappleOption').value;
-    PineHalf = document.getElementById('halfPine').value;
-    PineXtra = document.getElementById('extraPine').value;
-    Bacon = document.getElementById('baconOption').value;
-    BaconHalf = document.getElementById('halfBacon').value;
-    BaconXtra = document.getElementById('extraBacon').value;
-    Onions = document.getElementById('onionsOption').value;
-    OnionsHalf = document.getElementById('halfOnion').value;
-    OnionsXtra = document.getElementById('extraOnion').value;
-    Olives = document.getElementById('olivesOption').value;
-    OlivesHalf = document.getElementById('halfOlives').value;
-    OlivesXtra = document.getElementById('extraOlives').value;
-    Mushrooms = document.getElementById('mushroomsOption').value;
-    MushHalf = document.getElementById('halfMush').value;
-    MushXtra = document.getElementById('extraMush').value;
-    BananaPeppers = document.getElementById('bananaPeppersOption').value;
-    BPHalf = document.getElementById('halfBP').value;
-    BPXtra = document.getElementById('extraBP').value;
-    UpdatePizza();
+    Pepperoni = document.getElementById('pepperoniOption').checked;
+    PepHalf = document.getElementById('halfPep').checked;
+    PepXtra = document.getElementById('extraPep').checked;
+    Sausage = document.getElementById('sausageOption').checked;
+    SausHalf = document.getElementById('halfSaus').checked;
+    SausXtra = document.getElementById('extraSaus').checked;
+    Ham = document.getElementById('hamOption').checked;
+    HamHalf = document.getElementById('halfHam').checked;
+    HamXtra = document.getElementById('extraHam').checked;
+    Beef = document.getElementById('beefOption').checked;
+    BeefHalf = document.getElementById('halfBeef').checked;
+    BeefXtra = document.getElementById('extraBeef').checked;
+    Pineapple = document.getElementById('pineappleOption').checked;
+    PineHalf = document.getElementById('halfPine').checked;
+    PineXtra = document.getElementById('extraPine').checked;
+    Bacon = document.getElementById('baconOption').checked;
+    BaconHalf = document.getElementById('halfBacon').checked;
+    BaconXtra = document.getElementById('extraBacon').checked;
+    Onions = document.getElementById('onionsOption').checked;
+    OnionsHalf = document.getElementById('halfOnion').checked;
+    OnionsXtra = document.getElementById('extraOnion').checked;
+    Olives = document.getElementById('olivesOption').checked;
+    OlivesHalf = document.getElementById('halfOlives').checked;
+    OlivesXtra = document.getElementById('extraOlives').checked;
+    Mushrooms = document.getElementById('mushroomsOption').checked;
+    MushHalf = document.getElementById('halfMush').checked;
+    MushXtra = document.getElementById('extraMush').checked;
+    BananaPeppers = document.getElementById('bananaPeppersOption').checked;
+    BPHalf = document.getElementById('halfBP').checked;
+    BPXtra = document.getElementById('extraBP').checked;
 }
 
 function PremadeChanged() {
-    BPHalf = document.getElementById('halfBP').value;
-    BPXtra = document.getElementById('extraBP').value;
-    PremadePepperoni = document.getElementById('Pepperoni').value;
-    PremadeMeatLovers = document.getElementById('MeatLovers').value;
-    PremadeCheese = document.getElementById('Cheese').value;
-    PremadeHawaiian = document.getElementById('Hawaiian').value;
-    PremadeDeepDish = document.getElementById('DeepDish').value;
-    UpdatePizza();
+    BPHalf = document.getElementById('halfBP').checked;
+    BPXtra = document.getElementById('extraBP').checked;
+    PremadePepperoni = document.getElementById('Pepperoni').checked;
+    PremadeMeatLovers = document.getElementById('MeatLovers').checked;
+    PremadeCheese = document.getElementById('Cheese').checked;
+    PremadeHawaiian = document.getElementById('Hawaiian').checked;
+    PremadeDeepDish = document.getElementById('DeepDish').checked;
 }
 
 
