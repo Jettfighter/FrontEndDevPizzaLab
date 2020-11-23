@@ -1,29 +1,26 @@
 var entrypoint = document.getElementById('pizza');
 
+
 entrypoint.innerHTML = "<p>This is a piece of text</p>";
+
 
 window.addEventListener("load", function () {
 
     entrypoint.innerHTML =
-        `
-
+`
 <div id="EntireWidget" class="layout">
-<div class="verticalDisplay">
-    <div class="pizzaNav">
-        <h1>Je Suis Une Pizza</h1>
-    </div>
-    
-    <div class="pizzaAndPrice">
-
-        <div class="pizzadisplay">
-
+    <div class="verticalDisplay">
+        <div class="pizzaNav">
+            <h1>Je Suis Une Pizza</h1>
         </div>
-        <div class="AddToOrderWidget">
 
-            <div class="pricearea">
-                <div >Total:</div>
-                <div id="price" >$0.00</div>
+
+        <div class="pizzaAndPrice">
+
+            <div class="pizzadisplay">
+
             </div>
+            <div class="AddToOrderWidget">
 
             <button class="orderbutton"  data-toggle="modal" data-target="#pizzaAdded">ADD TO ORDER</button>
 
@@ -214,6 +211,11 @@ window.addEventListener("load", function () {
 `;
 })
 
+var layout = document.getElementById('EntireWidget');
+layout.addEventListener("change", function() {
+    updatePage();
+})
+
 var thePizza = new Pizza("XL", [], "Plain Pizza");
 
 var total = 0;
@@ -233,7 +235,6 @@ else if (topping = 5) {
 else if (topping > 5) {
     total + 4
     console.log("Special Deal " + this.total)
-
 }
 else {
     console.log(this.total)
@@ -290,5 +291,31 @@ function size4() {
     } else {
         text.style.display = "none";
     }
+}
 
+function updatePage() {
+    // updatePizza();
+    updatePrice();
+}
+
+function updatePrice() {
+
+    var toppings = getToppings();
+}
+
+function getToppings() {
+    /*
+    check if each box is checked, if so add it to the list
+    */
+}
+
+function getValue(){
+    var checks = document.getElementsByClassName("check");
+    var str = "";
+    for( i = 0; i < checks.length; i++) {
+        if (checks[i] === true) {
+            str += checks[i].value + " ";
+        }
+        return console.log(str + "Thanks For Your Order");
+    }
 }
