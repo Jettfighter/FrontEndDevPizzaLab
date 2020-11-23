@@ -18,13 +18,14 @@ entrypoint.innerHTML =
 
             </div>
             <div class="AddToOrderWidget">
+                <div id="toppingListDisplay"></div>
 
                 <div class="pricearea">
                     <div >Total:</div>
                     <div id="price" >$0.00</div>
                 </div>
 
-                <button href="#" onclick="getValue() ; return false;" class="orderbutton">ADD TO ORDER</button>
+                <button href="#" onclick="getToppings() ; return false;" class="orderbutton">ADD TO ORDER</button>
             </div>
         </div>
 
@@ -174,37 +175,12 @@ entrypoint.innerHTML =
 `;
 })
 
-var layout = document.getElementById('EntireWidget');
-layout.addEventListener("change", function() {
-    updatePage();
-})
+// var layout = document.getElementById('EntireWidget');
+// layout.addEventListener("change", function() {
+//     updatePage();
+// })
 
-var thePizza = new Pizza("XL", [], "Plain Pizza");
-
-var total = 0;
-addTopping(topping); {
-  This.total += topping.cost;
-  document.getElementByID("total").innerHTML = this.total;
-}
-
-if (topping >= 2 < 5 || topping.extra){
-    total + 1;
-    console.log(this.total)
-}
-else if (topping = 5) {
-    total + 3;
-    console.log(this.total)
-}
-else if (topping > 5) {
-    total + 4
-    console.log("Special Deal " + this.total)
-    
-}
-else {
-    console.log(this.total)
-}
-
-
+// var thePizza = new Pizza("XL", [], "Plain Pizza");
 
 function size1(){
     var checkbox = document.getElementById("XL");
@@ -265,13 +241,15 @@ function getToppings() {
     */
 }
 
-function getValue(){
+function getToppings(){
     var checks = document.getElementsByClassName("check");
-    var str = "";
+    var str = [];
+
     for( i = 0; i < checks.length; i++) {
-        if (checks[i] === true) {
-            str += checks[i].value + " ";
+        if (checks[i].checked == true) {
+            str[i] = checks[i].value;
         }
-        return console.log(str + "Thanks For Your Order");
     }
+
+    return str;
 }

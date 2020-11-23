@@ -6,7 +6,6 @@
     <title>Menu</title>
 </head>
 <body>
-
     <div id="EntireWidget" class="layout">
         <div class="verticalDisplay">
             <div class="pizzaNav">
@@ -19,13 +18,14 @@
 
                 </div>
                 <div class="AddToOrderWidget">
+                    <div id="toppingListDisplay"></div>
 
                     <div class="pricearea">
                         <div >Total:</div>
                         <div id="price" >$0.00</div>
                     </div>
 
-                    <button href="#" onclick="getValue() ; return false;" class="orderbutton">ADD TO ORDER</button>
+                    <button href="#" onclick="getToppings() ; return false;" class="orderbutton">ADD TO ORDER</button>
                 </div>
             </div>
 
@@ -165,8 +165,6 @@
                         <label for="DeepDish">Chicago Deep Dish</label><br>
                     </div>
             </div>
-            <button href="#" onclick="getValue() ; return false;">Add to Order</button>
-
         </div>
     </div>
     
