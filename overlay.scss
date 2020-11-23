@@ -1,3 +1,7 @@
+html {
+    background-color: darkslategray;
+}
+  
 .layout {
     margin: auto;
     width: 50%;
@@ -69,10 +73,13 @@
 
 .pizzadisplay {
     margin: 4%;
-    width: 400px;
-    height: 400px;
+}
 
-    border: 10% solid  #936137;
-    background-color: #bb8e4c;
-    border-radius: 100%;
+.specialSign {
+    background-color: darkgreen;
+    padding: 2%;
+    border: 2px solid black;
+    border-bottom: 0px solid black;
+    color: white;
+    font-weight: bolder;
 }

@@ -1,7 +1,3 @@
 Shows pizza as changes are made
 10 different topping options that can be put on pizza halves or the entire pizza easily
-Dynamic text list showing selected topping options and current price total
-Can select 'Double' or 'Extra' toppings that will each count as two toppings
-'Special Deal' sign is visible if they get the 5+ topping price
 Five 'pre-built' pizza options should be visible and will automatically set the pizza settings for these pizzas when clicked
-'Add to Order' button that thanks you for your order
