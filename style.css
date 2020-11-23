@@ -4,7 +4,7 @@ html {
 
 .layout {
   margin: auto;
-  width: 50%;
+  width: 70%;
   height: 50%;
   border: 3px solid green;
   border-radius: 15px;
@@ -23,6 +23,8 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: center;
   border: 3px solid green;
   border-radius: 15px;
   padding: 2%;
