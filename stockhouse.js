@@ -3,12 +3,12 @@ class stockhouse {
     static PreBuiltPizzas = [
         new Pizza(
             "Large",
-            ["Pepporoni"],
+            ["Pepperoni"],
             "Pepperoni"
         ),
         new Pizza(
             "Large",
-            ["Pepporoni", "Sausage", "Ham"],
+            ["Pepperoni", "Sausage", "Ham"],
             "Meat Lovers"
         ),
         new Pizza(
@@ -23,7 +23,7 @@ class stockhouse {
         ),
         new Pizza(
             "XL",
-            ["Pepporoni", "Ham"],
+            ["Pepperoni", "Ham"],
             "DeepDish"
         )
     ]
