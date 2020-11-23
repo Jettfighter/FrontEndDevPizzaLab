@@ -2,10 +2,6 @@ Shows pizza as changes are made
 10 different topping options that can be put on pizza halves or the entire pizza easily
 Dynamic text list showing selected topping options and current price total
 Can select 'Double' or 'Extra' toppings that will each count as two toppings
-First topping is free, each after that is $1.00
-Five toppings is $3.00, each after that is still $1.00
 'Special Deal' sign is visible if they get the 5+ topping price
 Five 'pre-built' pizza options should be visible and will automatically set the pizza settings for these pizzas when clicked
 'Add to Order' button that thanks you for your order
-Professionally styled with polished graphics
-Make it work and look good in mobile
