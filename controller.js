@@ -16,7 +16,7 @@ window.addEventListener("load", function () {
     <div class="pizzaAndPrice">
 
         <div class="pizzadisplay">
-            <canvas id="pizzaCanvas" name="pizzaCanvas" height="250" width="250"></canvas>
+            <canvas id="pizzaCanvas" name="pizzaCanvas" height="350" width="350"></canvas>
         </div>
 
         <div class="AddToOrderWidget">
@@ -36,19 +36,19 @@ window.addEventListener("load", function () {
 
     <div class="pizzaSizes">
         <h1>Pizza Sizes</h1>
-        <input class= "check" type="radio" id="XL" name="XL" value="Extra Large" onclick="SizeChanged()">
+        <input class= "check" type="radio" id="XL" name="pizzaSizes" value="Extra Large" onclick="SizeChanged()">
             <label for="XL">Extra Large</label><br>
             <p id="text1" style="display: none"> $20</p>
 
-        <input class= "check" type="radio" id="Large" name="Large" value="Large" onclick="SizeChanged()">
+        <input class= "check" type="radio" id="Large" name="pizzaSizes" value="Large" onclick="SizeChanged()">
             <label for="Large">Large</label><br>
             <p id="text2" style="display: none"> $15</p>
 
-        <input class= "check" type="radio" id="Medium" name="Medium" value="Medium" onclick="SizeChanged()">
+        <input class= "check" type="radio" id="Medium" name="pizzaSizes" value="Medium" onclick="SizeChanged()">
             <label for="Medium">Medium</label><br>
             <p id="text3" style="display: none"> $10</p>
 
-        <input class= "check" type="radio" id="Small" name="Small" value="Small" onclick="SizeChanged()">
+        <input class= "check" type="radio" id="Small" name="pizzaSizes" value="Small" onclick="SizeChanged()">
             <label for="Small">Small</label><br>
             <p id="text4" style="display: none"> $6</p>    
 
@@ -173,6 +173,7 @@ window.addEventListener("load", function () {
 <script src="controller.js"></script>
 <script src="Pizza.js"></script>
 `;
+Init();
 });
 
 
@@ -221,10 +222,11 @@ function Init() {
 
 function UpdatePizza() {
     var context = document.getElementById("pizzaCanvas").getContext("2d");
+    context.clearRect(0, 0, 350, 350);
 
     if (XtraLarge) {
         context.beginPath();
-        context.arc(150, 125, 125, 0, 2 * Math.PI);
+        context.arc(175, 175, 150, 0, 2 * Math.PI);
         context.fillStyle = "#c39b77";
         context.fill();
         context.stroke();
