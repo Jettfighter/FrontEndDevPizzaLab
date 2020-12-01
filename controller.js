@@ -696,51 +696,6 @@ function SizeChanged() {
 }
 
 function ToppingsChanged() {
-    Pepperoni = document.getElementById('pepperoniOption').checked;
-    PepHalf = document.getElementById('halfPep').checked;
-    PepXtra = document.getElementById('extraPep').checked;
-    Sausage = document.getElementById('sausageOption').checked;
-    SausHalf = document.getElementById('halfSaus').checked;
-    SausXtra = document.getElementById('extraSaus').checked;
-    Ham = document.getElementById('hamOption').checked;
-    HamHalf = document.getElementById('halfHam').checked;
-    HamXtra = document.getElementById('extraHam').checked;
-    Beef = document.getElementById('beefOption').checked;
-    BeefHalf = document.getElementById('halfBeef').checked;
-    BeefXtra = document.getElementById('extraBeef').checked;
-    Pineapple = document.getElementById('pineappleOption').checked;
-    PineHalf = document.getElementById('halfPine').checked;
-    PineXtra = document.getElementById('extraPine').checked;
-    Bacon = document.getElementById('baconOption').checked;
-    BaconHalf = document.getElementById('halfBacon').checked;
-    BaconXtra = document.getElementById('extraBacon').checked;
-    Onions = document.getElementById('onionsOption').checked;
-    OnionsHalf = document.getElementById('halfOnion').checked;
-    OnionsXtra = document.getElementById('extraOnion').checked;
-    Olives = document.getElementById('olivesOption').checked;
-    OlivesHalf = document.getElementById('halfOlives').checked;
-    OlivesXtra = document.getElementById('extraOlives').checked;
-    Mushrooms = document.getElementById('mushroomsOption').checked;
-    MushHalf = document.getElementById('halfMush').checked;
-    MushXtra = document.getElementById('extraMush').checked;
-    BananaPeppers = document.getElementById('bananaPeppersOption').checked;
-    BPHalf = document.getElementById('halfBP').checked;
-    BPXtra = document.getElementById('extraBP').checked;
-
-    PremadePepperoni = document.getElementById('Pepperoni').checked = false;
-    PremadeMeatLovers = document.getElementById('MeatLovers').checked = false;
-    PremadeCheese = document.getElementById('Cheese').checked = false;
-    PremadeHawaiian = document.getElementById('Hawaiian').checked = false;
-    PremadeDeepDish = document.getElementById('DeepDish').checked = false;
-}
-
-function PremadeChanged() {
-    PremadePepperoni = document.getElementById('Pepperoni').checked;
-    PremadeMeatLovers = document.getElementById('MeatLovers').checked;
-    PremadeCheese = document.getElementById('Cheese').checked;
-    PremadeHawaiian = document.getElementById('Hawaiian').checked;
-    PremadeDeepDish = document.getElementById('DeepDish').checked;
-
     Pepperoni = document.getElementById('pepperoniOption').checked = false;
     PepHalf = document.getElementById('halfPep').checked = false;
     PepXtra = document.getElementById('extraPep').checked = false;
@@ -771,6 +726,14 @@ function PremadeChanged() {
     BananaPeppers = document.getElementById('bananaPeppersOption').checked = false;
     BPHalf = document.getElementById('halfBP').checked = false;
     BPXtra = document.getElementById('extraBP').checked = false;
+}
+
+function PremadeChanged() {
+    PremadePepperoni = document.getElementById('Pepperoni').checked = false;
+    PremadeMeatLovers = document.getElementById('MeatLovers').checked = false;
+    PremadeCheese = document.getElementById('Cheese').checked = false;
+    PremadeHawaiian = document.getElementById('Hawaiian').checked = false;
+    PremadeDeepDish = document.getElementById('DeepDish').checked = false;
 }
 
 
